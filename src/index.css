@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@700;800;900&family=Rajdhani:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #05030b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.bg-app-shell {
+  background:
+    radial-gradient(circle at 15% 6%, rgba(255, 43, 214, 0.24), transparent 28%),
+    radial-gradient(circle at 82% 18%, rgba(0, 213, 255, 0.22), transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(128, 255, 0, 0.12), transparent 30%),
+    linear-gradient(135deg, #080514 0%, #05030b 45%, #0a0714 100%);
+}
+
+.bg-noise {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(to bottom, black, transparent 86%);
+}
+
+.glass-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035)),
+    rgba(6, 7, 20, 0.78);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.025) inset,
+    0 24px 70px rgba(0, 0, 0, 0.35),
+    0 0 38px rgba(0, 213, 255, 0.08);
+  backdrop-filter: blur(22px);
+}
+
+.neon-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255, 43, 214, 0.17), rgba(0, 213, 255, 0.12));
+  color: #f8fbff;
+  font-size: 14px;
+  font-weight: 700;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.neon-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(148, 255, 255, 0.55);
+  background: linear-gradient(135deg, rgba(255, 43, 214, 0.24), rgba(0, 213, 255, 0.2));
+  box-shadow:
+    0 0 24px rgba(0, 213, 255, 0.18),
+    0 0 34px rgba(255, 43, 214, 0.12);
+}
+
+.neon-range {
+  height: 7px;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 43, 214, 0.8), rgba(0, 213, 255, 0.75));
+  outline: none;
+}
+
+.neon-range::-webkit-slider-thumb {
+  height: 18px;
+  width: 18px;
+  appearance: none;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  background: #00d5ff;
+  box-shadow: 0 0 18px rgba(0, 213, 255, 0.85);
+}
+
+.neon-range::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  background: #00d5ff;
+  box-shadow: 0 0 18px rgba(0, 213, 255, 0.85);
+}
+
+.neon-word {
+  max-width: 100%;
+  font-size: min(var(--logo-size), 18vw);
+  overflow-wrap: anywhere;
+  filter: drop-shadow(0 0 18px var(--theme-primary));
+  animation: logoFlicker 5.8s infinite;
+}
+
+.group:hover .neon-word {
+  filter:
+    drop-shadow(0 0 24px var(--theme-primary))
+    drop-shadow(0 0 34px var(--theme-secondary));
+}
+
+.bg-grid-lines {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(circle, black 0%, black 46%, transparent 78%);
+}
+
+.bg-cyber-grid {
+  background:
+    linear-gradient(180deg, rgba(2, 2, 12, 0.2) 0%, rgba(2, 2, 12, 0.92) 100%),
+    radial-gradient(circle at 50% 30%, rgba(255, 43, 214, 0.28), transparent 34%),
+    linear-gradient(135deg, #080719, #02030a 64%, #120216);
+}
+
+.bg-deep-space {
+  background:
+    radial-gradient(circle at 20% 18%, rgba(0, 213, 255, 0.24), transparent 26%),
+    radial-gradient(circle at 78% 72%, rgba(47, 123, 255, 0.23), transparent 28%),
+    linear-gradient(145deg, #020716, #07112b 48%, #02030a);
+}
+
+.bg-vaporwave {
+  background:
+    radial-gradient(circle at 35% 20%, rgba(255, 79, 216, 0.28), transparent 30%),
+    radial-gradient(circle at 70% 70%, rgba(124, 247, 255, 0.22), transparent 28%),
+    linear-gradient(160deg, #150420, #25124a 52%, #08020d);
+}
+
+.bg-carbon {
+  background:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%),
+    radial-gradient(circle at 50% 28%, rgba(128, 255, 0, 0.16), transparent 32%),
+    #05070a;
+  background-size: 24px 24px, 24px 24px, auto, auto;
+}
+
+.bg-void {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255, 209, 102, 0.22), transparent 34%),
+    radial-gradient(circle at 18% 78%, rgba(255, 138, 0, 0.14), transparent 26%),
+    linear-gradient(145deg, #050309, #0c0811 55%, #020203);
+}
+
+@keyframes logoFlicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    opacity: 1;
+  }
+
+  20%,
+  55% {
+    opacity: 0.88;
+  }
+}
+
+@media (max-width: 640px) {
+  .neon-word {
+    font-size: min(var(--logo-size), 16vw);
+  }
+}
